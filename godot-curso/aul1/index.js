@@ -1,3 +1,3 @@
 console.log("Olá mundo");
 
-console.log("Hihihi, levei vantagem")
+console.log("100% atualizado")
