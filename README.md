@@ -18,4 +18,14 @@
      <td>20.12.2</td>
    </tr>
  </table>
+<h2> The end </h2>
+<div style="display: flex;">
+  <div style="width: 50% display: flex;"><p style="text-align: left; ">It's everything I've done for now... I'm working on it, come back later and see the progress!</p></div>
+  <p style="width: 50% display: flex;"><img src="https://github.com/AlekssandherMax/godot-course/blob/main/images/FTLF.gif" ></p>
+</div>
+
+
+
+
+
 
