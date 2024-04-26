@@ -1,7 +1,1 @@
-Como fazer atualizar o repositório
-
-git add .
-
-git commit -m "Segundo commit"
-
-git push -u origin main
+Neste repositório estão armazenados os projetos feitos durante o bootcamp do santander de desenvolvimento de jogos na godot.
