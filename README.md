@@ -1,4 +1,16 @@
 <h1>Bootcamp: Making Games With Godot</h1>
-<p>> Updating... ⚠️</p>
+<p>> Working... ⚠️</p>
 <p>In this repository are armazened the projects that has been done during the Santander Booticamp of Game Developong With Godot.</p>
+<h2>Technologies Used</h2>
+
+ <table>
+   <tr> 
+     <td>Godot</td>
+     <td>Node Js</td>
+   </tr>
+   <tr>
+     <td>4.2.2</td>
+     <td>20.12.2</td>
+   </tr>
+ </table>
 
