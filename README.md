@@ -1,4 +1,4 @@
-<img src="https://github.com/AlekssandherMax/godot-course/assets/94875660/6fe7902d-e48d-4bf8-b730-48c25527e621" alt="Godot" width="650" height="265" style="display: block; margin: auto;">
+<img src="https://github.com/AlekssandherMax/godot-course/blob/main/images/Godot.jpg" alt="Godot" style="display: block; margin: auto;">
 
 
 <h1>Bootcamp: Making Games With Godot</h1>
