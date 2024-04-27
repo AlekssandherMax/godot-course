@@ -6,7 +6,6 @@ var xp = 0
 var xp = read('\bInsira a quantidade de xp de seu personagem: ')
 
 function rank(xp) {
-
 if (xp <= 1000) return "ferro"
 
     else if (xp > 1001 && xp < 2000) return "bronze"
