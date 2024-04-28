@@ -19,10 +19,20 @@
    </tr>
  </table>
 <h2> The end... for now</h2>
-<div style="display: flex;">
-  <div style="width: 50% display: flex;"><p style="text-align: left; ">It's everything I've done until then... I'm working on it, check back later and see the progress!</p></div>
-  <p style="width: 50% display: flex;"><img src="https://github.com/AlekssandherMax/godot-course/blob/main/images/FTLF.gif" ></p>
-</div>
+
+<table width="100%">
+  <tr>
+    <td valign="top">
+      <p>It's everything I've done until then... I'm working on it, check back later and see the progress!</p>
+    </td>
+    <td>
+      <img src="https://github.com/AlekssandherMax/godot-course/blob/main/images/FTLF.gif" >
+    </td>
+  </tr>
+</table>
+
+
+
 
 
 
