@@ -12,8 +12,8 @@
 <h2>História:</h2>
 
 <h2>Moodboard/Galeria</h2>
-<img src=">
 <table width="100%">
+
   <tr>
     <td>
       <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/588650/ss_ac28000ade40cc2fe5c128f32ac98ba33c008a7a.1920x1080.jpg?t=1678188017" alt="Dead Cells Gameplay image">
