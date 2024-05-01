@@ -1,17 +1,28 @@
-<h2>One Sheet: 🏢</h2>
+<h2>The princess tower 🏢</h2>
 <ul>
   <li>Nome do jogo
   <li>Público alvo
   <li>História
   <li>Gameplay
   <li>Pilares
-  <li>Esboço do jogo
-  <li>Pontos fortes
 </ul>
 
+<h2>Público alvo:</h2>
+<p>Este jogo será feito para os amantes de jogos de plataforma.</p>
+
 <h2>História:</h2>
+<p>Sua noiva, princesa do reino de doravante, foi raptada e levada até o topo da torre do duque martin, sua missão agora é escalar torre até chegar ao topo para salvar a princesa. </p>
+
+<h2>Pilares:</h2>
+<ul>
+  <li>Gameplay rápida
+  <li>Reviravoltas na história
+  <li>Dificuldade altamente progressiva
+  <li>Mecânicas simples
+</ul>
 
 <h2>Moodboard/Galeria</h2>
+<p>O exemplos abaixo servem como inspiração para o game.</p>
 <table width="100%">
 
   <tr>
@@ -23,3 +34,4 @@
     </td>
   </tr>
 </table>
+

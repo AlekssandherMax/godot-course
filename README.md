@@ -3,7 +3,7 @@
 </p>
 
 <!-- Como sincronizar repositório local com servidor: git fetch git pull -->
-<!-- Como atualizar o servidor com alterações do repositório local: git add . git commit -m "" (outro comando que esqueci)-->
+<!-- Como atualizar o servidor com alterações do repositório local: git add . git commit -m "" git push -u origin main-->
 
 <h1>Bootcamp: Making Games With Godot</h1>
 <p>Working... ⚠️</p>
