@@ -26,11 +26,11 @@
 <p>Será um jogo de plataforma, onde o jogador se moverá com as teclas e irá poder mirar com o mouse onde quiser, para atirar e arremessar objetos utilizando o botão esquerdo do mouse, com o botão direito será possível utilizar armas de curto alcance, que terão como objetivo causar dano, bloquear projéteis ou repelir inimigos, a depender da arma.</p>
 <h3>Movimentação:</h3>
 <p>Os reflexos do jogador serão importantes, não pretendo colocar um sistema de esquiva, apenas um sistema limitado de defesa com armas de curto alcance, inicialmente ele terá o pulo duplo para poder se moviemntar e talvez dash.</p>
-<h3>Habilidades:<h3>
+<h3>Habilidades:</h3>
 <p>No geral poderão ser desbloqueadas habilidades mágicas ao decorrer do game, que poderão ser desbloqueadas em lojas específicas durante a jornada</p>
 <h3>Modos de jogo:</h3>
 <p>Inicialmente modo história apenas, mas depois de zerar o game será desbloqueado o modo perfeito, onde se o jogador receber um hit, ele irá morrer; também será desbloqueado o modo liso, onde o jogador terá que zerar o jogo apenas usando a forma base do personagem.</p>
-<h3>Conquistas:<h3>
+<h3>Conquistas:</h3>
 <p>Haverá desbloqueaveis, sendo estes: skins, armas, personagens, modos de jogo e finais alternativos; sendo todos debloqueaveis apenas jogando.</p>
 <h3>DLCs:</h3>
 <p>Haverá apenas uma única dlc para o jogo, que se chamará "Um conto de réis" e irá incluir uma logo dourada no jogo, o preço desta dlc será uma unidade em moeda nacional de cada país, por exemplo: No Brasil será 1 real, nos EUA 1 dólar, na UE 1 euro, na Argentina 1 peso e assim por diante.</p>
