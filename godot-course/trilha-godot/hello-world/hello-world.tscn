@@ -5,7 +5,41 @@
 
 [node name="world" type="Node2D"]
 
+[node name="ground" type="ColorRect" parent="."]
+offset_right = 1156.0
+offset_bottom = 652.0
+color = Color(0.0140182, 0.741451, 0.55373, 1)
+
 [node name="player" type="Sprite2D" parent="."]
-position = Vector2(1, -1)
+position = Vector2(557, 295)
 texture = ExtResource("1_vcr5n")
 script = ExtResource("2_ha1hx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 260.0
+offset_top = 200.0
+offset_right = 340.0
+offset_bottom = 312.0
+color = Color(0, 1, 0.176471, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 864.0
+offset_top = 96.0
+offset_right = 944.0
+offset_bottom = 208.0
+color = Color(0, 1, 0.176471, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 948.0
+offset_top = 308.0
+offset_right = 1028.0
+offset_bottom = 420.0
+color = Color(0, 1, 0.176471, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 4.0
+offset_top = 448.0
+offset_right = 1172.0
+offset_bottom = 516.0
+rotation = 0.0601497
+color = Color(0, 1, 0.921569, 1)
