@@ -27,7 +27,7 @@
 <h3>Movimentação:</h3>
 <p>Os reflexos do jogador serão importantes, não pretendo colocar um sistema de esquiva, apenas um sistema limitado de defesa com armas de curto alcance, inicialmente ele terá o pulo duplo para poder se moviemntar e talvez dash.</p>
 <h3>Habilidades:</h3>
-<p>No geral poderão ser desbloqueadas habilidades mágicas ao decorrer do game, que poderão ser desbloqueadas em lojas específicas durante a jornada</p>
+<p>No geral poderão ser desbloqueadas habilidades mágicas ao decorrer do game, que poderão ser desbloqueadas em lojas específicas durante a jornada.</p>
 <h3>Modos de jogo:</h3>
 <p>Inicialmente modo história apenas, mas depois de zerar o game será desbloqueado o modo perfeito, onde se o jogador receber um hit, ele irá morrer; também será desbloqueado o modo liso, onde o jogador terá que zerar o jogo apenas usando a forma base do personagem.</p>
 <h3>Conquistas:</h3>
