@@ -22,7 +22,7 @@ if (xp <= 1000) return "ferro"
 
     else if (xp > 10001) return " radiante"
 
-    else return "... Ops, digite um número!"
+    else return "... Ops, digite um número!" 
 
 }
   console.log(`O personagem ${player} está no nível${rank(xp)}`)
