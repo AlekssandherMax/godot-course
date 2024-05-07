@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds04pg7vdv72k"]
+
+[ext_resource type="PackedScene" uid="uid://dokd6kfuablkn" path="res://objects/box2.tscn" id="1_5yfbt"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h1pnj"]
+friction = 22.0
+bounce = 27.25
+
+[node name="boxSolid" instance=ExtResource("1_5yfbt")]
+mass = 38.89
+physics_material_override = SubResource("PhysicsMaterial_h1pnj")
+
+[node name="CollisionShape2D" parent="." index="0"]
+debug_color = Color(0.506666, 0.540327, 0.575711, 0.42)
+
+[node name="ColorRect" parent="CollisionShape2D" index="0"]
+color = Color(1.39579e-06, 0.477707, 0.594686, 1)
