@@ -1,8 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://by57x4p278x17"]
+[gd_scene load_steps=9 format=3 uid="uid://by57x4p278x17"]
 
 [ext_resource type="TileSet" uid="uid://wx7mbj35gwu4" path="res://titleSet.tres" id="1_5lv1o"]
 [ext_resource type="Script" path="res://script/player.gd" id="2_ycdmx"]
 [ext_resource type="Texture2D" uid="uid://d11r5l57e41i0" path="res://kenney_alien-ufo-pack/shipBlue_manned.png" id="3_b0iys"]
+[ext_resource type="Texture2D" uid="uid://cr4c5nc7v5dna" path="res://addons/Free-Horizontal-Game-Backgrounds/PNG/game_background_3/layers/sky.png" id="4_fvwd3"]
+[ext_resource type="Texture2D" uid="uid://bvrilswgsivrv" path="res://addons/Free-Horizontal-Game-Backgrounds/PNG/game_background_3/layers/rocks.png" id="5_0ivwd"]
+[ext_resource type="Texture2D" uid="uid://0pco1oq1nohm" path="res://addons/Free-Horizontal-Game-Backgrounds/PNG/game_background_3/layers/clouds_1.png" id="6_y43ih"]
+[ext_resource type="Texture2D" uid="uid://cj44xlypnggl6" path="res://addons/Free-Horizontal-Game-Backgrounds/PNG/game_background_3/layers/clouds_2.png" id="7_cyr5d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_16kby"]
 radius = 60.0
@@ -37,3 +41,38 @@ texture = ExtResource("3_b0iys")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(-5, 0)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2(0.6, 0.6)
+transform = Transform2D(0.6, 0, 0, 0.6, 0, 0)
+
+[node name="sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sky" type="Sprite2D" parent="ParallaxBackground/sky"]
+texture = ExtResource("4_fvwd3")
+centered = false
+
+[node name="rocks2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Rocks" type="Sprite2D" parent="ParallaxBackground/rocks2"]
+texture = ExtResource("5_0ivwd")
+centered = false
+
+[node name="rocks3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Rocks" type="Sprite2D" parent="ParallaxBackground/rocks3"]
+texture = ExtResource("6_y43ih")
+centered = false
+
+[node name="rocks4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Rocks" type="Sprite2D" parent="ParallaxBackground/rocks4"]
+texture = ExtResource("7_cyr5d")
+centered = false
