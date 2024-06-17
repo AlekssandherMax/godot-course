@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://ckcigheilkvyb"]
+
+[ext_resource type="Texture2D" uid="uid://cpcj4bhoqvmnr" path="res://addons/Tiny swords/Factions/Knights/Troops/Pawn/Blue/Pawn_Blue.png" id="1_xjs04"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrfjk"]
+atlas = ExtResource("1_xjs04")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43yvd"]
+atlas = ExtResource("1_xjs04")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6buuv"]
+atlas = ExtResource("1_xjs04")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxl2f"]
+atlas = ExtResource("1_xjs04")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kod7"]
+atlas = ExtResource("1_xjs04")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxjq8"]
+atlas = ExtResource("1_xjs04")
+region = Rect2(960, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g0uaf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrfjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43yvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6buuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxl2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kod7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxjq8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iafkm"]
+radius = 21.0
+height = 48.0
+
+[node name="Pawn" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -22)
+sprite_frames = SubResource("SpriteFrames_g0uaf")
+autoplay = "default"
+frame = 3
+frame_progress = 0.89357
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -22)
+shape = SubResource("CapsuleShape2D_iafkm")
