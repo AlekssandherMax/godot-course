@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
 @export var speed: float = 3
-
+@export var swordDamage: int = 2
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
+@onready var swordArea: Area2D = $swordArea
 
 var input_vector: Vector2 = Vector2(0, 0)
 var isRunning: bool = false
@@ -19,6 +20,7 @@ func _process(delta: float) -> void:
 			isRunning = false
 			animationPlayer.play("idle")
 		pass
+	GameManager.playerPosition = position
 	
 func _physics_process(delta: float) -> void:
 	#To change velocity
@@ -71,4 +73,13 @@ func attack() -> void:
 	animationPlayer.play("attackSide1")
 	
 	isAttacking = true
-
+	
+	
+	
+func damageEnemies():
+	var bodies = swordArea.get_overlapping_bodies()
+	for body in bodies:
+		if body.is_in_group("enemies"):
+			var Enemy: enemy = body
+			Enemy.damage(swordDamage)
+	pass

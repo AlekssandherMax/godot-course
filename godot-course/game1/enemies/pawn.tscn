@@ -1,5 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://ckcigheilkvyb"]
+[gd_scene load_steps=12 format=3 uid="uid://ckcigheilkvyb"]
 
+[ext_resource type="Script" path="res://behaviors/followPlayer.gd" id="1_iqp2i"]
+[ext_resource type="Script" path="res://enemies/enemy.gd" id="1_l413a"]
 [ext_resource type="Texture2D" uid="uid://cpcj4bhoqvmnr" path="res://addons/Tiny swords/Factions/Knights/Troops/Pawn/Blue/Pawn_Blue.png" id="1_xjs04"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lrfjk"]
@@ -56,7 +58,8 @@ animations = [{
 radius = 21.0
 height = 48.0
 
-[node name="Pawn" type="CharacterBody2D"]
+[node name="Pawn" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_l413a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -22)
@@ -68,3 +71,6 @@ frame_progress = 0.89357
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -22)
 shape = SubResource("CapsuleShape2D_iafkm")
+
+[node name="followPlayer" type="Node" parent="."]
+script = ExtResource("1_iqp2i")

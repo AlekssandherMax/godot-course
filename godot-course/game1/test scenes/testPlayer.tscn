@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://qg06kk1ig4l8"]
+[gd_scene load_steps=5 format=3 uid="uid://qg06kk1ig4l8"]
 
 [ext_resource type="Texture2D" uid="uid://cwwnpfytfmtov" path="res://addons/Tiny swords/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.png" id="1_qkwg3"]
 [ext_resource type="PackedScene" uid="uid://05ntmjugqn4w" path="res://player/player.tscn" id="2_qatlg"]
+[ext_resource type="Script" path="res://test scenes/Camera2D.gd" id="3_u645n"]
 [ext_resource type="PackedScene" uid="uid://ckcigheilkvyb" path="res://enemies/pawn.tscn" id="3_w5wh6"]
 
 [node name="TestPlayer" type="Node2D"]
@@ -85,8 +86,17 @@ vertical_alignment = 1
 [node name="player" parent="." instance=ExtResource("2_qatlg")]
 position = Vector2(510, 288)
 
+[node name="Camera2D" type="Camera2D" parent="player"]
+script = ExtResource("3_u645n")
+
 [node name="Pawn" parent="." instance=ExtResource("3_w5wh6")]
 position = Vector2(275, 377)
 
 [node name="Pawn2" parent="." instance=ExtResource("3_w5wh6")]
 position = Vector2(796, 313)
+
+[node name="Pawn3" parent="." instance=ExtResource("3_w5wh6")]
+position = Vector2(297, 228)
+
+[node name="Pawn4" parent="." instance=ExtResource("3_w5wh6")]
+position = Vector2(791, 162)
