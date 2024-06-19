@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://ckcigheilkvyb"]
+[gd_scene load_steps=13 format=3 uid="uid://ckcigheilkvyb"]
 
 [ext_resource type="Script" path="res://behaviors/followPlayer.gd" id="1_iqp2i"]
 [ext_resource type="Script" path="res://enemies/enemy.gd" id="1_l413a"]
 [ext_resource type="Texture2D" uid="uid://cpcj4bhoqvmnr" path="res://addons/Tiny swords/Factions/Knights/Troops/Pawn/Blue/Pawn_Blue.png" id="1_xjs04"]
+[ext_resource type="PackedScene" uid="uid://cwv34yafiaxqd" path="res://events/die.tscn" id="2_gkpj2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lrfjk"]
 atlas = ExtResource("1_xjs04")
@@ -60,15 +61,18 @@ height = 48.0
 
 [node name="Pawn" type="CharacterBody2D" groups=["enemies"]]
 script = ExtResource("1_l413a")
+health = 4
+deathPrefab = ExtResource("2_gkpj2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -22)
 sprite_frames = SubResource("SpriteFrames_g0uaf")
 autoplay = "default"
 frame = 3
-frame_progress = 0.89357
+frame_progress = 0.779747
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -22)
 shape = SubResource("CapsuleShape2D_iafkm")
 

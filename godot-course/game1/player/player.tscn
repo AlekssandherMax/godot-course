@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://05ntmjugqn4w"]
+[gd_scene load_steps=17 format=3 uid="uid://05ntmjugqn4w"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_fftt1"]
 [ext_resource type="Texture2D" uid="uid://cwwnpfytfmtov" path="res://addons/Tiny swords/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.png" id="1_ygk7i"]
+[ext_resource type="PackedScene" uid="uid://cwv34yafiaxqd" path="res://events/die.tscn" id="2_5enmx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dgx66"]
 radius = 13.0
@@ -221,7 +222,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_w6818"]
 resource_name = "run"
-length = 0.5
+length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -230,10 +231,10 @@ tracks/0/path = NodePath("Sprite2D:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(4, 1)]
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(4, 1), Vector2i(5, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0uo0s"]
@@ -252,10 +253,14 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_t2uhr"]
 radius = 74.0068
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dh6cb"]
+radius = 31.1448
+
 [node name="player" type="CharacterBody2D"]
 position = Vector2(480, 391)
 motion_mode = 1
 script = ExtResource("1_fftt1")
+deathPrefab = ExtResource("2_5enmx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -28)
@@ -281,3 +286,10 @@ position = Vector2(0, -20)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="swordArea"]
 shape = SubResource("CircleShape2D_t2uhr")
 debug_color = Color(0.874187, 0.627237, 0.498469, 0)
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(-1, -25)
+shape = SubResource("CircleShape2D_dh6cb")
+debug_color = Color(0.854902, 0.0392157, 0, 0.419608)

@@ -6,10 +6,16 @@ extends CharacterBody2D
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 @onready var swordArea: Area2D = $swordArea
 
+@export var health: int = 100
+@export var deathPrefab: PackedScene
+@onready var hitboxArea: Area2D = $hitbox
+
+
 var input_vector: Vector2 = Vector2(0, 0)
 var isRunning: bool = false
 var isAttacking: bool = false
 var attackColdown: float = 0
+var hitboxColdown: float = 0
 
 func _process(delta: float) -> void:
 	readInput()
@@ -21,6 +27,12 @@ func _process(delta: float) -> void:
 			animationPlayer.play("idle")
 		pass
 	GameManager.playerPosition = position
+	
+	if not isAttacking:
+		rotateSprite()
+		
+	#process damdage
+	updateHitboxDetection(delta)
 	
 func _physics_process(delta: float) -> void:
 	#To change velocity
@@ -43,7 +55,7 @@ func _physics_process(delta: float) -> void:
 			else:
 				animationPlayer.play("idle")
 			pass
-	
+func rotateSprite():
 	#To flip sprite
 	if input_vector.x > 0: 
 		sprite.flip_h = false
@@ -81,5 +93,58 @@ func damageEnemies():
 	for body in bodies:
 		if body.is_in_group("enemies"):
 			var Enemy: enemy = body
-			Enemy.damage(swordDamage)
+			
+			var directionToEnemy = (Enemy.position - position).normalized()
+			var attackDirection: Vector2
+			if sprite.flip_h:
+				attackDirection = Vector2.LEFT
+			else:
+				attackDirection = Vector2.RIGHT
+			var dotPtoduct = directionToEnemy.dot(attackDirection)
+			
+			print("Dot:", dotPtoduct)
+			
+			if dotPtoduct >= 0.3:
+				Enemy.damage(swordDamage)
 	pass
+
+func damage(amount: int):
+	if health <= 0: return
+	health -= amount
+	print("Player recebeu dano de ", amount, "e a vida atual é ", health)
+	
+	#damagesignal
+	modulate = Color.RED
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_IN)
+	tween.set_trans(Tween.TRANS_QUINT)
+	tween.tween_property(self, "modulate", Color.WHITE, 0.3)
+	
+	
+	#Process death
+	if health <= 0:
+		die()
+		
+func die() -> void:
+	if deathPrefab:
+		var deathObject = deathPrefab.instantiate()
+		deathObject.position = position
+		get_parent().add_child(deathObject)
+		
+	queue_free()
+	
+func updateHitboxDetection(delta: float):
+	
+	hitboxColdown -= delta
+	if hitboxColdown > 0: return
+	
+	hitboxColdown = 0.5
+	
+	var bodies = hitboxArea.get_overlapping_bodies()
+	for body in bodies:
+		if body.is_in_group("enemies"):
+			var Enemy: enemy = body
+			var damageAmount = 1
+			damage(damageAmount)
+			
+	pass	
