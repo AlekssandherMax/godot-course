@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 @export var speed: float = 3
@@ -7,6 +8,7 @@ extends CharacterBody2D
 @onready var swordArea: Area2D = $swordArea
 
 @export var health: int = 100
+@export var maxHealth = 100
 @export var deathPrefab: PackedScene
 @onready var hitboxArea: Area2D = $hitbox
 
@@ -16,6 +18,7 @@ var isRunning: bool = false
 var isAttacking: bool = false
 var attackColdown: float = 0
 var hitboxColdown: float = 0
+
 
 func _process(delta: float) -> void:
 	readInput()
@@ -148,3 +151,9 @@ func updateHitboxDetection(delta: float):
 			damage(damageAmount)
 			
 	pass	
+
+func heal(amount: int):
+	health += amount
+	if health > maxHealth:
+		health = maxHealth
+	return health

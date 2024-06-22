@@ -256,7 +256,7 @@ radius = 74.0068
 [sub_resource type="CircleShape2D" id="CircleShape2D_dh6cb"]
 radius = 31.1448
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(480, 391)
 motion_mode = 1
 script = ExtResource("1_fftt1")
