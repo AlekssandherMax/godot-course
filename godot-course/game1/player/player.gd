@@ -1,24 +1,33 @@
 class_name Player
 extends CharacterBody2D
 
+@export_category("Moviment")
 @export var speed: float = 3
+@export_category("Sword")
 @export var swordDamage: int = 2
+
+@export_category("Power")
+@export var powerDamage: int = 1
+@export var powerInterval: float = 30
+@export var powerScene: PackedScene
+
+@export_category("Life")
+@export var health: int = 100
+@export var maxHealth: int = 100
+@export var deathPrefab: PackedScene
+
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 @onready var swordArea: Area2D = $swordArea
-
-@export var health: int = 100
-@export var maxHealth = 100
-@export var deathPrefab: PackedScene
 @onready var hitboxArea: Area2D = $hitbox
-
+@onready var healthProgressBar: ProgressBar = $healthProgressBar
 
 var input_vector: Vector2 = Vector2(0, 0)
 var isRunning: bool = false
 var isAttacking: bool = false
 var attackColdown: float = 0
 var hitboxColdown: float = 0
-
+var powerColdown: float = 0
 
 func _process(delta: float) -> void:
 	readInput()
@@ -36,6 +45,11 @@ func _process(delta: float) -> void:
 		
 	#process damdage
 	updateHitboxDetection(delta)
+	
+	updatePower(delta)
+	
+	healthProgressBar.max_value = maxHealth
+	healthProgressBar.value = health
 	
 func _physics_process(delta: float) -> void:
 	#To change velocity
@@ -58,6 +72,18 @@ func _physics_process(delta: float) -> void:
 			else:
 				animationPlayer.play("idle")
 			pass
+func updatePower(delta: float):
+	powerColdown -= delta
+	if powerColdown > 0: return
+	powerColdown = powerInterval
+	
+	var power = powerScene.instantiate()
+	
+	power.damageAmount = powerDamage
+	add_child(power)
+	
+	
+	pass
 func rotateSprite():
 	#To flip sprite
 	if input_vector.x > 0: 

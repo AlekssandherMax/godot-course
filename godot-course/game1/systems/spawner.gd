@@ -16,7 +16,7 @@ func _process(delta: float ):
 	var index = randi_range(0, creatures.size() -1)
 	var creatureScene = creatures[index]
 	var creature = creatureScene.instantiate()
-	
+	position = GameManager.playerPosition
 	creature.global_position = getPoint()
 	get_parent().add_child(creature)
 	
