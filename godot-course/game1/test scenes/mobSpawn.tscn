@@ -1,19 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cigsm1shvlw1c"]
+[gd_scene load_steps=5 format=3 uid="uid://cigsm1shvlw1c"]
 
-[ext_resource type="PackedScene" uid="uid://05ntmjugqn4w" path="res://player/player.tscn" id="1_bojjr"]
 [ext_resource type="PackedScene" uid="uid://cm040aris5tit" path="res://systems/spawner.tscn" id="2_q7r11"]
-[ext_resource type="Script" path="res://test scenes/Camera2D.gd" id="2_t0omj"]
 [ext_resource type="PackedScene" uid="uid://bv7pmef8n3jfj" path="res://enemies/sheep.tscn" id="3_76o21"]
 [ext_resource type="PackedScene" uid="uid://ckcigheilkvyb" path="res://enemies/pawn.tscn" id="4_gwm1h"]
 [ext_resource type="PackedScene" uid="uid://ciqcd6bvoqcpq" path="res://enemies/goblin.tscn" id="5_bj6hx"]
 
 [node name="MobSpawn" type="Node2D"]
-
-[node name="player" parent="." instance=ExtResource("1_bojjr")]
-position = Vector2(538, 348)
-
-[node name="Camera2D" type="Camera2D" parent="player"]
-script = ExtResource("2_t0omj")
 
 [node name="spawner" parent="." instance=ExtResource("2_q7r11")]
 creatures = Array[PackedScene]([ExtResource("3_76o21"), ExtResource("4_gwm1h"), ExtResource("5_bj6hx")])

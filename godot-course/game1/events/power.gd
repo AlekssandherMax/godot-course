@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var damageAmount: int = 2
+@export var damageAmount: int = 3
 @onready var area2d: Area2D = $Area2D
 
 func dealDamage():

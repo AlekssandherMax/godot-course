@@ -1,9 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://ciqcd6bvoqcpq"]
+[gd_scene load_steps=16 format=3 uid="uid://ciqcd6bvoqcpq"]
 
 [ext_resource type="Script" path="res://enemies/enemy.gd" id="1_p48mm"]
 [ext_resource type="PackedScene" uid="uid://cwv34yafiaxqd" path="res://events/die.tscn" id="2_rro2n"]
 [ext_resource type="Texture2D" uid="uid://bdf1j2smumexl" path="res://addons/Tiny swords/Factions/Goblins/Troops/Torch/Red/Torch_Red.png" id="3_fudbg"]
+[ext_resource type="PackedScene" uid="uid://cd2khe5em2jdv" path="res://events/meat.tscn" id="3_ucvu3"]
 [ext_resource type="Script" path="res://behaviors/followPlayer.gd" id="4_yaxa5"]
+[ext_resource type="PackedScene" uid="uid://bsleme260n206" path="res://events/money.tscn" id="4_yuiwv"]
+[ext_resource type="PackedScene" uid="uid://dloqacsaiese2" path="res://events/goldenMeat.tscn" id="5_5jobp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tlu5g"]
 atlas = ExtResource("3_fudbg")
@@ -55,14 +58,19 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iafkm"]
-radius = 46.0
-height = 98.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8w45s"]
+radius = 34.0
+height = 72.0
 
 [node name="goblin" type="CharacterBody2D" groups=["enemies"]]
+y_sort_enabled = true
+motion_mode = 1
 script = ExtResource("1_p48mm")
 health = 20
 deathPrefab = ExtResource("2_rro2n")
+dropChance = 0.2
+dropItens = Array[PackedScene]([ExtResource("3_ucvu3"), ExtResource("4_yuiwv"), ExtResource("5_5jobp")])
+dropChances = Array[float]([0.8, 0.8, 0.2])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(3.8147e-06, -46)
@@ -73,9 +81,13 @@ frame = 3
 frame_progress = 0.947472
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -48)
-shape = SubResource("CapsuleShape2D_iafkm")
+position = Vector2(0, -39)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_8w45s")
 
 [node name="followPlayer" type="Node" parent="."]
 script = ExtResource("4_yaxa5")
 speed = 0.6
+
+[node name="markDamage" type="Marker2D" parent="."]
+position = Vector2(0, -89)

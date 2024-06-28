@@ -27,9 +27,16 @@ var isRunning: bool = false
 var isAttacking: bool = false
 var attackColdown: float = 0
 var hitboxColdown: float = 0
-var powerColdown: float = 0
+var powerColdown: float = 30
 
+signal meatCollected(value: int)
+signal moneyCollected(value: int)
+
+func _ready():
+	GameManager.player = self
 func _process(delta: float) -> void:
+	GameManager.playerPosition = position
+	
 	readInput()
 	if isAttacking:
 		attackColdown -= delta
@@ -38,7 +45,7 @@ func _process(delta: float) -> void:
 			isRunning = false
 			animationPlayer.play("idle")
 		pass
-	GameManager.playerPosition = position
+	
 	
 	if not isAttacking:
 		rotateSprite()
@@ -162,7 +169,7 @@ func die() -> void:
 		
 	queue_free()
 	
-func updateHitboxDetection(delta: float):
+func updateHitboxDetection(delta: float) -> void:
 	
 	hitboxColdown -= delta
 	if hitboxColdown > 0: return

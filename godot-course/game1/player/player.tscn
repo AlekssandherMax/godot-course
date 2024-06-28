@@ -1,13 +1,14 @@
-[gd_scene load_steps=20 format=3 uid="uid://05ntmjugqn4w"]
+[gd_scene load_steps=21 format=3 uid="uid://05ntmjugqn4w"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_fftt1"]
 [ext_resource type="Texture2D" uid="uid://cwwnpfytfmtov" path="res://addons/Tiny swords/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.png" id="1_ygk7i"]
 [ext_resource type="PackedScene" uid="uid://cwv34yafiaxqd" path="res://events/die.tscn" id="2_5enmx"]
 [ext_resource type="PackedScene" uid="uid://cvtl3o3n6gp6q" path="res://events/power.tscn" id="2_e0gew"]
+[ext_resource type="FontFile" uid="uid://cgesryr8t1odd" path="res://addons/Tiny swords/Resources/Resources/press-start-2p/PressStart2P-Regular.ttf" id="5_x1rrq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dgx66"]
 radius = 13.0
-height = 62.0
+height = 58.0
 
 [sub_resource type="Animation" id="Animation_qg6c5"]
 length = 0.001
@@ -252,13 +253,13 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t2uhr"]
-radius = 74.0068
+radius = 75.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dh6cb"]
 radius = 31.1448
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_otq7s"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.999884, 0.237325, 0.250947, 0.172549)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hkce1"]
 bg_color = Color(0.972107, 0, 0.154622, 1)
@@ -267,6 +268,8 @@ bg_color = Color(0.972107, 0, 0.154622, 1)
 position = Vector2(480, 391)
 motion_mode = 1
 script = ExtResource("1_fftt1")
+speed = 2.5
+powerDamage = 2
 powerInterval = 15.0
 powerScene = ExtResource("2_e0gew")
 deathPrefab = ExtResource("2_5enmx")
@@ -279,7 +282,7 @@ vframes = 8
 frame = 34
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -27)
+position = Vector2(0, -26)
 shape = SubResource("CapsuleShape2D_dgx66")
 debug_color = Color(0, 0.792157, 0.921569, 0.235294)
 
@@ -304,14 +307,21 @@ shape = SubResource("CircleShape2D_dh6cb")
 debug_color = Color(0.854902, 0.0392157, 0, 0.419608)
 
 [node name="healthProgressBar" type="ProgressBar" parent="."]
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -53.0
-offset_top = 16.0
-offset_right = 53.0
-offset_bottom = 28.0
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = 13.5
+offset_right = 43.5
+offset_bottom = 26.5
 grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_x1rrq")
+theme_override_font_sizes/font_size = 13
 theme_override_styles/background = SubResource("StyleBoxFlat_otq7s")
 theme_override_styles/fill = SubResource("StyleBoxFlat_hkce1")
-show_percentage = false
