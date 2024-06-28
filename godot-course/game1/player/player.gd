@@ -34,6 +34,8 @@ signal moneyCollected(value: int)
 
 func _ready():
 	GameManager.player = self
+	meatCollected.connect(func(value: int): GameManager.meatCounter += 1)
+	moneyCollected.connect(func(value: int): GameManager.moneyCounter += 5)
 func _process(delta: float) -> void:
 	GameManager.playerPosition = position
 	
@@ -138,7 +140,7 @@ func damageEnemies():
 				attackDirection = Vector2.RIGHT
 			var dotPtoduct = directionToEnemy.dot(attackDirection)
 			
-			print("Dot:", dotPtoduct)
+		
 			
 			if dotPtoduct >= 0.3:
 				Enemy.damage(swordDamage)
@@ -147,7 +149,7 @@ func damageEnemies():
 func damage(amount: int):
 	if health <= 0: return
 	health -= amount
-	print("Player recebeu dano de ", amount, "e a vida atual é ", health)
+	
 	
 	#damagesignal
 	modulate = Color.RED
@@ -162,6 +164,7 @@ func damage(amount: int):
 		die()
 		
 func die() -> void:
+	GameManager.endGame()
 	if deathPrefab:
 		var deathObject = deathPrefab.instantiate()
 		deathObject.position = position

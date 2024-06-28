@@ -8,4 +8,6 @@
 [node name="MobSpawn" type="Node2D"]
 
 [node name="spawner" parent="." instance=ExtResource("2_q7r11")]
+initialSpawnRate = 30.0
+mobsInreasedPerMinute = 60.0
 creatures = Array[PackedScene]([ExtResource("3_76o21"), ExtResource("4_gwm1h"), ExtResource("5_bj6hx")])

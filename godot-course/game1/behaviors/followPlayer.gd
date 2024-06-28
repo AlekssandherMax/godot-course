@@ -14,7 +14,7 @@ func _ready():
 	
 
 func _physics_process(delta):
-	
+	if GameManager.isGameOver: return 
 	var playerPosition = GameManager.playerPosition
 	var difference = playerPosition - Enemy.position
 	var inputVector = difference.normalized()
@@ -26,4 +26,4 @@ func _physics_process(delta):
 		sprite.flip_h = false
 	elif inputVector.x < 0:
 		sprite.flip_h = true
-	print("A velocidade é",speed)
+	

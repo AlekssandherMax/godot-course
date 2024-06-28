@@ -1,6 +1,11 @@
 class_name mobSpawner
 extends Node2D
 
+@export var initialSpawnRate: float = 60
+@export var mobsInreasedPerMinute: float = 30
+@export var waveDuration: float = 20
+@export var breakIntensity: float = 0.5
+var time: float = 0 
 
 @export var creatures: Array[PackedScene]
 
@@ -8,6 +13,8 @@ extends Node2D
 var mobsPerMinute: float = 60.0
 var coldown: float = 0
 func _process(delta: float ):
+	
+	if GameManager.isGameOver: return 
 	
 	coldown -= delta
 	if coldown > 0: return
@@ -31,7 +38,18 @@ func _process(delta: float ):
 	creature.global_position = point
 	get_parent().add_child(creature)
 	
-	pass
+	#Difficult system
+	time += delta
+	#Linear difficult (green line)
+	var sinWave = sin((time * TAU)/waveDuration)
+	#Wave System (pink line)
+	var waveFactor = remap(sinWave, -1, 1, breakIntensity, 1)
+	var spawnRate = initialSpawnRate + mobsInreasedPerMinute * (time / 60.0)
+	
+	spawnRate += waveFactor
+	
+	mobsPerMinute = spawnRate
+	
 	
 func getPoint() -> Vector2:
 	pathFollow2d.progress_ratio = randf()

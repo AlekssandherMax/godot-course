@@ -18,7 +18,7 @@ func _ready():
 
 func damage(amount: int):
 	health -= amount
-	print("Inimigo recebeu dano de ", amount, "e a vida atual é ", health)
+
 	
 	# Damage signal
 	modulate = Color.RED
@@ -48,7 +48,10 @@ func die() -> void:
 	# Drop 
 	if randf() <= dropChance:
 		dropItem()
-		
+	
+	#Counter
+	GameManager.monstersDefeatedCounter += 1
+	
 	queue_free()
 
 func dropItem() -> void:
