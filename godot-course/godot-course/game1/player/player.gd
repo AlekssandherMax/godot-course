@@ -29,6 +29,7 @@ var attackColdown: float = 0
 var hitboxColdown: float = 0
 var powerColdown: float = 30
 
+var i: int  = 1
 signal meatCollected(value: int)
 signal moneyCollected(value: int)
 
@@ -120,7 +121,13 @@ func attack() -> void:
 	if isAttacking: 
 		return
 	attackColdown = 0.6
-	animationPlayer.play("attackSide1")
+	
+	if i%2 == 0:
+		animationPlayer.play("attackSide2")
+	else:
+		animationPlayer.play("attackSide1")
+	
+	i += 1
 	
 	isAttacking = true
 	
